@@ -12,7 +12,7 @@
 	.course {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, 1fr);
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: minmax(50px, 75px) 1fr;
 		background-color: cornflowerblue;
 
 		header {
@@ -21,6 +21,10 @@
 		}
 
 		.arrow {
+			grid-row: 1/2;
+		}
+
+		.action {
 			grid-row: 1/2;
 		}
 		.icon {
