@@ -3,6 +3,7 @@
 
 	display: grid;
 	grid-templat-rows: [title-start] 100px [title-end courses-start] repeat(auto-fit, 1fr) [courses-end];
+	grid-row-gap: 22px;
 
 	h1 {
 		// grid-row: title-start/title-end;
@@ -12,8 +13,17 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, 1fr);
 		grid-template-rows: 1fr 1fr;
+		background-color: cornflowerblue;
 
-		.title {
+		header {
+			grid-row: 1/2;
+			display: flex;
+		}
+
+		.arrow {
+			grid-row: 1/2;
+		}
+		.icon {
 			grid-row: 1/2;
 		}
 

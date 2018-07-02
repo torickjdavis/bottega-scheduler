@@ -1,0 +1,11 @@
+$arrowSize: 15px;
+
+.arrow {
+	border-left: $arrowSize solid transparent;
+	border-right: $arrowSize solid transparent;
+
+	border-bottom: $arrowSize solid black;
+
+	height: 0;
+	width: 0;
+}
