@@ -1,6 +1,6 @@
 import { FETCH_COURSES } from './types';
 
-function fetchCourses() {
+export function fetchCourses() {
 	return {
 		type: FETCH_COURSES,
 		payload: [ // array of our course data
