@@ -5,8 +5,17 @@
 	grid-templat-rows: [title-start] 100px [title-end courses-start] repeat(auto-fit, 1fr) [courses-end];
 	grid-row-gap: 22px;
 
+
+	padding: 100px 0 0 100px;
+	margin-right: -50px;
+
 	h1 {
-		// grid-row: title-start/title-end;
+		color: $blue;
+		font-family: $alegreya;
+		font-size: 34px;
+		font-weight: bold;
+		border-left: 2px solid $blue;
+		padding: 20px 40px;
 	}
 
 	.course {
