@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import ScheduleCourse from './scheduleCourse';
 import Gradient from '../gradient';
 import ProgressTracker from './progressTracker';
 
 class Schedule extends Component {
+	renderCourses() {
+		const data = this.props.courses;
+		return data.map((course, index) => {
+			if (course.enrolled) {
+				return <ScheduleCourse {...course} key={index} />
+			}
+		});
+	}
+
 	render() {
 		return (
 			<div className="schedule">
 				<h1>My Schedule</h1>
-				<ScheduleCourse title="Problem Solving"/>
-				<ScheduleCourse title="Problem Sovling"/>
-				<ScheduleCourse title="Problem Solving"/>
+				{ this.renderCourses() }
 				<ProgressTracker />
 				<Gradient />
 			</div>
@@ -19,4 +27,10 @@ class Schedule extends Component {
 	}
 }
 
-export default Schedule;
+function mapStateToProps(state) {
+	return {
+		courses: state.courses
+	}
+}
+
+export default connect(mapStateToProps)(Schedule);
