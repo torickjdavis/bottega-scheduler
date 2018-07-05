@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
-import Icon from '../icon';
-import Arrow from '../arrow';
 import Action from '../action';
 
 class ScheduleCourse extends Component {
@@ -10,9 +9,10 @@ class ScheduleCourse extends Component {
 		return (
 			<div className="course">
 				<label className="title">{this.props.title}</label>
+				<Action onClick={() => this.props.toggleEnrolled(this.props.id)}/>
 			</div>
 		);
 	}
 }
 
-export default ScheduleCourse;
+export default connect(null, actions)(ScheduleCourse);
