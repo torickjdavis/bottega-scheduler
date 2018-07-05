@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Icon from '../icon';
 import Arrow from '../arrow';
 import Action from '../action';
 
-class LibraryCourse extends Component {
+class ScheduleCourse extends Component {
 	render() {
 		return (
 			<div className="course">
@@ -14,4 +15,4 @@ class LibraryCourse extends Component {
 	}
 }
 
-export default LibraryCourse;
+export default ScheduleCourse;
