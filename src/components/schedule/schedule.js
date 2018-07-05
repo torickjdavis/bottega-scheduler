@@ -10,7 +10,7 @@ class Schedule extends Component {
 		const data = this.props.courses;
 		return data.map((course, index) => {
 			if (course.enrolled) {
-				return <ScheduleCourse {...course} key={index} />
+				return <ScheduleCourse {...course} key={index} />;
 			}
 		});
 	}
@@ -30,7 +30,7 @@ class Schedule extends Component {
 function mapStateToProps(state) {
 	return {
 		courses: state.courses
-	}
+	};
 }
 
 export default connect(mapStateToProps)(Schedule);
