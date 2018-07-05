@@ -6,7 +6,7 @@ class Action extends Component {
 	render() {
 		return (
 			<button onClick={() => this.props.onClick()} className={`${this.props.className} action`}>
-				{ Icon('fas fa-plus-circle') }
+				{ Icon('fas fa-plus-circle', 'action') }
 				{/* fas fa-times-circle */}
 			</button>
 		);

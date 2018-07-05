@@ -22,18 +22,24 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, 1fr);
 		grid-template-rows: minmax(50px, 75px) 1fr;
-		background-color: cornflowerblue;
 
+		padding: 25px;
 		header {
+			grid-column: 1/2;
 			grid-row: 1/2;
 			display: flex;
 		}
-
+		.line {
+			grid-column: 1/-1;
+			grid-row: 1/2;
+		}
 		.arrow {
+			grid-column: 2;
 			grid-row: 1/2;
 		}
 
 		.action {
+			grid-column: 3/4;
 			grid-row: 1/2;
 		}
 		.icon {
@@ -41,7 +47,40 @@
 		}
 
 		.description {
+			grid-column: 1/-1;
 			grid-row: 2/3;
+		}
+	}
+	.course {
+		&:hover {
+			background: white;
+			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.21);
+		}
+		.title {
+			color: $grey;
+			font-family: $lato;
+			font-size: 18px;
+			line-height: 22px;
+		}
+		.check {
+			color: $blue;
+		}
+		.line {
+			border-bottom: 1px solid #F2F2F2;
+		}
+		.description {
+			label {
+				color: $blue;
+				font-family: $alegreya;
+				font-size: 16px;
+				font-weight: bold;
+				text-align: center;
+			}
+			p {
+				color: $grey;
+				font-family: $lato;
+				font-size: 16px;
+			}
 		}
 	}
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Icon = (icon) => {
+const Icon = (icon, others) => {
 	return (
-		<i className = {`icon ${icon}`}> </i>
+		<i className = {`icon ${icon} ${others}`}> </i>
 	);
 };
 
