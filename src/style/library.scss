@@ -51,10 +51,16 @@
 			grid-row: 2/3;
 		}
 	}
+
+	@mixin solid-course {
+		background: white;
+		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.21);
+	}
+
 	.course {
-		&:hover {
-			background: white;
-			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.21);
+		&:hover,
+		&.selected {
+			@include solid-course();
 		}
 		.title {
 			color: $grey;

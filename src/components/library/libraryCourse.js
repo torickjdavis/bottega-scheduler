@@ -28,6 +28,15 @@ class LibraryCourse extends Component {
 	}.bind(this);
 
 	handleCallback = function(status) {
+		let course = document.querySelector('.library > .course');
+
+		if (!status) {
+			course.classList.add('selected');
+		}
+		else {
+			course.classList.remove('selected');
+		}
+
 		this.setState({ status });
 	}.bind(this);
 
