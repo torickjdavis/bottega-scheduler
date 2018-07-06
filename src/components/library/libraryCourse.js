@@ -16,6 +16,7 @@ class LibraryCourse extends Component {
 	}
 
 	renderDescription = function() {
+		// Refactor so false state is when it is closed, currently this is due to the Arrow.props.callback() being called before render() and state not being changed yet. (Delayed state change)
 		if (!this.state.status) {
 			return (
 				<div className="description">
