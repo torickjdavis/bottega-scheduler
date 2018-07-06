@@ -7,6 +7,29 @@ import Arrow from '../arrow';
 import Action from '../action';
 
 class LibraryCourse extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			status: true
+		};
+	}
+
+	renderDescription = function() {
+		if (!this.state.status) {
+			return (
+				<div className="description">
+					<label>Course Description</label>
+					<p>{this.props.description}</p>
+				</div>
+			);
+		}
+	}.bind(this);
+
+	handleCallback = function(status) {
+		this.setState({ status });
+	}.bind(this);
+
 	render() {
 		return (
 			<div className="course">
@@ -15,12 +38,9 @@ class LibraryCourse extends Component {
 					{ Icon('fas fa-check', 'check')}
 				</header>
 				<div className="line"></div>
-				<Arrow />
+				<Arrow callback={status => this.handleCallback(status)} id={this.props.id}/>
 				<Action onClick={() => this.props.toggleEnrolled(this.props.id)}/>
-				<div className="description">
-					<label>Course Description</label>
-					<p>{this.props.description}</p>
-				</div>
+				{ this.renderDescription() }
 			</div>
 		);
 	}

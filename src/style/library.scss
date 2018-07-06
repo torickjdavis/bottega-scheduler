@@ -21,7 +21,7 @@
 	.course {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, 1fr);
-		grid-template-rows: minmax(50px, 75px) 1fr;
+		grid-template-rows: minmax(50px, 80px) 1fr;
 
 		padding: 25px;
 		header {
@@ -59,7 +59,7 @@
 		.title {
 			color: $grey;
 			font-family: $lato;
-			font-size: 18px;
+			font-size: 20px;
 			line-height: 22px;
 		}
 		.check {
@@ -67,6 +67,8 @@
 		}
 		.line {
 			border-bottom: 1px solid #F2F2F2;
+			margin-top: 20px;
+			margin-bottom: 24px;
 		}
 		.description {
 			label {

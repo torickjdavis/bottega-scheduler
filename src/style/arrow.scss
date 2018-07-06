@@ -1,11 +1,17 @@
-$arrowSize: 15px;
+$arrowSize: 8px;
 
 .arrow {
 	border-left: $arrowSize solid transparent;
 	border-right: $arrowSize solid transparent;
 
-	border-bottom: $arrowSize solid black;
+	border-top: $arrowSize solid $blue;
 
 	height: 0;
 	width: 0;
+
+	transition: all 0.3s ease;
+
+	&.closed {
+		transform: rotate(180deg);
+	}
 }
