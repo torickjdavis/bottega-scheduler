@@ -15,7 +15,7 @@ class Arrow extends Component {
 		arrow.classList.toggle('closed');
 
 		this.setState({ status: !this.state.status });
-		this.props.callback(this.state.status);
+		this.props.callback(this.state.status, e);
 	}.bind(this);
 
 	render() {

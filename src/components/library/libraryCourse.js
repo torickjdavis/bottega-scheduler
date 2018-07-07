@@ -6,38 +6,27 @@ import Icon from '../icon';
 import Arrow from '../arrow';
 import Action from '../action';
 
+import AnimateHeight from 'react-animate-height';
+
 class LibraryCourse extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			status: true
+			status: true,
+			height: 0
 		};
 	}
 
-	renderDescription = function() {
-		// Refactor so false state is when it is closed, currently this is due to the Arrow.props.callback() being called before render() and state not being changed yet. (Delayed state change)
-		if (!this.state.status) {
-			return (
-				<div className="description">
-					<label>Course Description</label>
-					<p>{this.props.description}</p>
-				</div>
-			);
-		}
-	}.bind(this);
+	handleCallback = function(status, event) {
+		// Refactor description render so false state is when it is closed, currently this is due to the Arrow.props.callback() being called before render() and state not being changed yet. (Delayed state change)
+		// let course = document.querySelector('.library > .course');
+		// using event targets rather than id selection
+		let course = event.target.parentElement;
+		course.classList.toggle('selected');
 
-	handleCallback = function(status) {
-		let course = document.querySelector('.library > .course');
-
-		if (!status) {
-			course.classList.add('selected');
-		}
-		else {
-			course.classList.remove('selected');
-		}
-
-		this.setState({ status });
+		let height = this.state.height == 0 ? 'auto' : 0; // rather than 80, set to auto for content size
+		this.setState({ status, height });
 	}.bind(this);
 
 	render() {
@@ -48,9 +37,15 @@ class LibraryCourse extends Component {
 					{ Icon('fas fa-check', 'check')}
 				</header>
 				<div className="line"></div>
-				<Arrow callback={status => this.handleCallback(status)} id={this.props.id}/>
+				<Arrow callback={(status, event) => this.handleCallback(status, event)} id={this.props.id}/>
 				<Action onClick={() => this.props.toggleEnrolled(this.props.id)}/>
-				{ this.renderDescription() }
+				{/* Refactor to use CSS animations over AnimateHeight library */}
+				<AnimateHeight duration={300} height={this.state.height}>
+					<div className="description">
+						<label>Course Description</label>
+						<p>{this.props.description}</p>
+					</div>
+				</AnimateHeight>
 			</div>
 		);
 	}
