@@ -25,7 +25,7 @@ class LibraryCourse extends Component {
 		let course = event.target.parentElement;
 		course.classList.toggle('selected');
 
-		let height = this.state.height == 0 ? 'auto' : 0; // rather than 80, set to auto for content size
+		let height = this.state.height == 0 ? 'auto' : 0;
 		this.setState({ status, height });
 	}.bind(this);
 
@@ -33,10 +33,9 @@ class LibraryCourse extends Component {
 		return (
 			<div className="course">
 				<header>
-					<label className="title">{this.props.title}</label>
+					<span className="title">{this.props.title}</span>
 					{ Icon('fas fa-check', 'check')}
 				</header>
-				<div className="line"></div>
 				<Arrow callback={(status, event) => this.handleCallback(status, event)} id={this.props.id}/>
 				<Action onClick={() => this.props.toggleEnrolled(this.props.id)}/>
 				{/* Refactor to use CSS animations over AnimateHeight library */}
