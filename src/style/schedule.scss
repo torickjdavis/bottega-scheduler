@@ -8,4 +8,16 @@
 	display: grid;
 	grid-template-rows: 100px repeat(auto-fill, 75px) [progress-start] 76px [progress-end];
 	grid-row-gap: 22px;
+	align-items: center;
+	justify-items: center;
+
+	h1 {
+		border-left: 1px solid $subtle-grey;
+		padding-left: 30px;
+
+		color: white;
+		font-family: $alegreya;
+		font-size: 20px;
+	}
+	.course {}
 }
