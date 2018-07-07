@@ -20,7 +20,7 @@ class Arrow extends Component {
 
 	render() {
 		return (
-			<a onClick={(e) => this.toggleArrow(e)} className={`${this.props.className} arrow closed`}>
+			<a onClick={(e) => this.toggleArrow(e)} className={`${this.props.className || ""} arrow closed`}>
 			</a>
 		);
 	}

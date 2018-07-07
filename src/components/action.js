@@ -18,7 +18,7 @@ class Action extends Component {
 
 	render() {
 		return (
-			<a onClick={(e) => this.handleAction(e) } className={`${this.props.className} action`}>
+			<a onClick={(e) => this.handleAction(e) } className={`${this.props.className || ""} action`}>
 			</a>
 		);
 	}
