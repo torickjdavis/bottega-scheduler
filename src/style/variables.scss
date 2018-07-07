@@ -8,3 +8,8 @@ $subtle-black: #333333;
 $alegreya: 'Alegreya';
 $mont: 'Montserrat';
 $lato: 'Lato';
+
+@mixin border-left {
+	border-left: 2px solid $subtle-grey;
+	padding: 6px 0 6px 30px;
+}
