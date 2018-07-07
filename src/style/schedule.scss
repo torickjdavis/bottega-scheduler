@@ -6,7 +6,7 @@
 	height: 100%;
 
 	display: grid;
-	grid-template-rows: [space-one-start] 1fr [space-one-end title-start] 100px [title-end] repeat(5, 80px) 1fr 76px [progress-end];
+	grid-template-rows: [title-start] 100px [title-end] repeat(5, 80px) 1fr [progress-start] 76px [progress-end];
 	grid-row-gap: 22px;
 	align-content: center;
 	align-items: center;

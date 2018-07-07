@@ -2,105 +2,121 @@
 	grid-column: library-start/library-end;
 	grid-row: 1/-1;
 
-	display: grid;
-	grid-template-rows: [title-start] 100px [title-end courses-start] repeat(auto-fit, 1fr) [courses-end];
-	grid-row-gap: 22px;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	position: relative;
 
 
-	padding: 100px 0 0 100px;
-
-	h1 {
-		color: $blue;
-		font-family: $alegreya;
-		font-size: 34px;
-		font-weight: bold;
-		border-left: 2px solid $blue;
-		padding: 20px 40px;
-	}
-
-	.course {
+	.container {
 		display: grid;
-		grid-template-columns: 1fr 45px 58px;
-		grid-template-rows: 32px 1fr;
-		align-items: center;
-		z-index: 1;
-		padding: 12px 0 12px 25px;
+		grid-template-rows: [title-start] 100px [title-end courses-start] repeat(auto-fit, 1fr) [courses-end];
+		grid-row-gap: 22px;
 
-		header {
-			grid-column: 1/2;
-			grid-row: 1/2;
-			display: flex;
+		height: 100%;
+		width: 100%;
+
+		padding: 5% 0 76px 7%;
+		overflow-y: scroll;
+
+		position: absolute;
+		right: -20px;
+
+		h1 {
+			color: $blue;
+			font-family: $alegreya;
+			font-size: 34px;
+			font-weight: bold;
+			border-left: 2px solid $blue;
+			padding: 20px 40px;
 		}
 
-		.arrow {
-			grid-column: 2/3;
-			grid-row: 1/2;
-		}
+		.course {
+			display: grid;
+			grid-template-columns: 1fr 45px 58px;
+			grid-template-rows: 32px 1fr;
+			align-items: center;
+			z-index: 1;
+			padding: 12px 0 12px 25px;
 
-		.action {
-			// Refactor to action.scss?
-			grid-column: 3/4;
-			grid-row: 1/2;
+			margin-right: 20px;
 
-			justify-self: center;
+			header {
+				grid-column: 1/2;
+				grid-row: 1/2;
+				display: flex;
+			}
 
-			opacity: 0;
-			transition: all 200ms ease;
-		}
-
-		.icon {
-			grid-row: 1/2;
-		}
-
-		.description {
-			grid-column: 1/-1;
-			grid-row: 2/3;
-		}
-	}
-
-	@mixin solid-course {
-		background: white;
-		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.21);
-	}
-
-	.course {
-		&:hover,
-		&.selected {
-			@include solid-course();
+			.arrow {
+				grid-column: 2/3;
+				grid-row: 1/2;
+			}
 
 			.action {
-				opacity: 1;
+				// Refactor to action.scss?
+				grid-column: 3/4;
+				grid-row: 1/2;
+
+				justify-self: center;
+
+				opacity: 0;
+				transition: all 200ms ease;
+			}
+
+			.icon {
+				grid-row: 1/2;
+			}
+
+			.description {
+				grid-column: 1/-1;
+				grid-row: 2/3;
 			}
 		}
 
-		.title {
-			color: $grey;
-			font-family: $lato;
-			font-size: 20px;
-			line-height: 22px;
+		@mixin solid-course {
+			background: white;
+			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.21);
 		}
 
-		.check {
-			color: $blue;
-			padding-left: 16px;
-			font-size: 24px;
-		}
+		.course {
+			&:hover,
+			&.selected {
+				@include solid-course();
 
-		.description {
-			border-top: 1px solid #F2F2F2;
-			margin-top: 19px;
-
-			label {
-				color: $blue;
-				font-family: $alegreya;
-				font-size: 16px;
-				font-weight: bold;
-				text-align: center;
+				.action {
+					opacity: 1;
+				}
 			}
-			p {
+
+			.title {
 				color: $grey;
 				font-family: $lato;
-				font-size: 16px;
+				font-size: 20px;
+				line-height: 22px;
+			}
+
+			.check {
+				color: $blue;
+				padding-left: 16px;
+				font-size: 24px;
+			}
+
+			.description {
+				border-top: 1px solid #F2F2F2;
+				margin-top: 19px;
+
+				label {
+					color: $blue;
+					font-family: $alegreya;
+					font-size: 16px;
+					font-weight: bold;
+					text-align: center;
+				}
+				p {
+					color: $grey;
+					font-family: $lato;
+					font-size: 16px;
+				}
 			}
 		}
 	}
