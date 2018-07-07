@@ -1,13 +1,13 @@
 .library {
 	grid-column: library-start/library-end;
+	grid-row: 1/-1;
 
 	display: grid;
-	grid-templat-rows: [title-start] 100px [title-end courses-start] repeat(auto-fit, 1fr) [courses-end];
+	grid-template-rows: [title-start] 100px [title-end courses-start] repeat(auto-fit, 1fr) [courses-end];
 	grid-row-gap: 22px;
 
 
 	padding: 100px 0 0 100px;
-	margin-right: -50px;
 
 	h1 {
 		color: $blue;
@@ -23,7 +23,7 @@
 		grid-template-columns: 1fr 45px 58px;
 		grid-template-rows: 32px 1fr;
 		align-items: center;
-
+		z-index: 1;
 		padding: 12px 0 12px 25px;
 
 		header {
@@ -45,7 +45,7 @@
 			justify-self: center;
 
 			opacity: 0;
-			transition: all 0.3s ease;
+			transition: all 200ms ease;
 		}
 
 		.icon {
