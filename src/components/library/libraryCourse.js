@@ -34,10 +34,10 @@ class LibraryCourse extends Component {
 			<div className="course">
 				<header>
 					<span className="title">{this.props.title}</span>
-					{ Icon('fas fa-check', 'check')}
+					{ this.props.enrolled ? Icon('fas fa-check', 'check') : '' }
 				</header>
 				<Arrow callback={(status, event) => this.handleCallback(status, event)} id={this.props.id}/>
-				<Action onClick={() => this.props.toggleEnrolled(this.props.id)}/>
+				<Action onClick={() => this.props.toggleEnrolled(this.props.id)} className={`${this.props.enrolled ? 'remove' : ''}`}/>
 				{/* Refactor to use CSS animations over AnimateHeight library */}
 				<AnimateHeight duration={300} height={this.state.height}>
 					<div className="description">
