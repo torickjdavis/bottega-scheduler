@@ -6,7 +6,7 @@
 	height: 100%;
 
 	display: grid;
-	grid-template-rows: [title-start] 100px [title-end] repeat(5, 80px) 1fr [progress-start] 76px [progress-end];
+	grid-template-rows: [title-start] 2fr [title-end] repeat(5, 80px) 1fr [progress-start] 76px [progress-end];
 	grid-row-gap: 22px;
 	align-content: center;
 	align-items: center;
@@ -15,12 +15,10 @@
 	h1 {
 		grid-row: title-start/title-end;
 
-		border-left: 2px solid $subtle-grey;
-
 		color: white;
 		font-family: $alegreya;
 		font-size: 20px;
-
+		font-weight: 300;
 		@include border-left;
 	}
 
